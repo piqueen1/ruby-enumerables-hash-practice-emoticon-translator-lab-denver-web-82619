@@ -13,7 +13,7 @@ def load_library(path)
       american = pair[0]
       
       lookup[:get_meaning][japanese] = american
-      lookup[:get_meaning][american] = japanese
+      lookup[:get_emoticon][american] = japanese
     binding.pry
     end
   end
