@@ -36,7 +36,7 @@ end
 =end
 
 def get_japanese_emoticon(path, emoticon)
-  load_library(path)
+  lookup = load_library(path)
   if lookup[:get_emoticon].keys.include?(emoticon)
     return lookup[:get_emoticon][emoticon]
   else
