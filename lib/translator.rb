@@ -35,8 +35,12 @@ end
  "wink"=>[";)", "(^_-)"]}
 =end
 
-def get_japanese_emoticon
-  # code goes here
+def get_japanese_emoticon(path, emoticon)
+  load_library(path)
+  if lookup[:get_emoticon].keys.include?(emoticon)
+    return lookup[:get_emoticon][emoticon]
+  else
+    return "So sorry, no such emoticon is in our dictionary"
 end
 
 def get_english_meaning
