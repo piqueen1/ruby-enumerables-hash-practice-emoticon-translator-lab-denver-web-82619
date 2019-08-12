@@ -17,7 +17,7 @@ def load_library(path)
   end
   
   lookup
-  binding.pry
+  #binding.pry
 end
 
 =begin
