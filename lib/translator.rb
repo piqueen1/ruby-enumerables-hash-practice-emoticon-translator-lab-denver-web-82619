@@ -7,11 +7,11 @@ def load_library(path)
   lookup[:get_meaning] = {}
   lookup[:get_emoticon] = {}
   
-  emoticons.each do |word, pairs|
-      japanese = pairs[1]
-      american = pairs[0]
+  emoticons.each do |word, pair|
+      japanese = pair[1]
+      american = pair[0]
       
-      lookup[:get_meaning][japanese] = american
+      lookup[:get_meaning][japanese] = word
       lookup[:get_emoticon][american] = japanese
     #binding.pry
   end
