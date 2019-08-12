@@ -41,6 +41,7 @@ def get_japanese_emoticon(path, emoticon)
     return lookup[:get_emoticon][emoticon]
   else
     return "So sorry, no such emoticon is in our dictionary"
+  end
 end
 
 def get_english_meaning
