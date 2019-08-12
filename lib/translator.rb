@@ -7,21 +7,18 @@ def load_library(path)
   lookup[:get_meaning] = {}
   lookup[:get_emoticon] = {}
   
-  emoticons.each do |word, pairs|
-    value.each do |pair|
-      japanese = pair[1]
-      american = pair[0]
-      
-      lookup[:get_meaning][japanese] = american
-      lookup[:get_meaning][american] = japanese
-    binding.pry
-    end
+  emoticons.each do |word, pair|
+    japanese = pair[1]
+    american = pair[0]
+    
+    lookup[:get_meaning][japanese] = word
+    lookup[:get_emoticon][american] = japanese
   end
   
   lookup
 end
 
-=begin
+=begin This is the source data in emoticons.yml
   emoticons
 => {"angel"=>["O:)", "☜(⌒▽⌒)☞"],
  "angry"=>[">:(", "ヽ(ｏ`皿′ｏ)ﾉ"],
@@ -38,10 +35,20 @@ end
  "wink"=>[";)", "(^_-)"]}
 =end
 
-def get_japanese_emoticon
-  # code goes here
+def get_japanese_emoticon(path, emoticon)
+  lookup = load_library(path)
+  if lookup[:get_emoticon][emoticon]
+    return lookup[:get_emoticon][emoticon]
+  else
+    return "Sorry, that emoticon was not found"
+  end
 end
 
-def get_english_meaning
-  # code goes here
+def get_english_meaning(path, emoticon)
+  lookup = load_library(path)
+  if lookup[:get_meaning][emoticon]
+    return lookup[:get_meaning][emoticon]
+  else
+    return "Sorry, that emoticon was not found"
+  end
 end
