@@ -8,7 +8,7 @@ def load_library(path)
   lookup[:get_emoticon] = {}
   
   emoticons.each do |word, pairs|
-    value.each do |pair|
+    pairs.each do |pair|
       japanese = pair[1]
       american = pair[0]
       
