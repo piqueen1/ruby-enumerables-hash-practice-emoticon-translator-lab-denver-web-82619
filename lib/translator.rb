@@ -3,11 +3,22 @@ require "pry"
 
 def load_library(path)
   emoticons = YAML.load_file(path)
-  actions = {}
-  actions[:get_meaning] = {}
-  actions[:get_emoticon] = {}
-  actions
-  #binding.pry
+  lookup = {}
+  lookup[:get_meaning] = {}
+  lookup[:get_emoticon] = {}
+  
+  emoticons.each do |word, pairs|
+    value.each do |pair|
+      japanese = pair[1]
+      american = pair[0]
+      
+      lookup[:get_meaning][japanese] = american
+      lookup[:get_meaning][american] = japanese
+    binding.pry
+    end
+  end
+  
+  lookup
 end
 
 =begin
