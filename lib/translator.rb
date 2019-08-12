@@ -18,7 +18,7 @@ def load_library(path)
   lookup
 end
 
-=begin
+=begin This is the source data in emoticons.yml
   emoticons
 => {"angel"=>["O:)", "☜(⌒▽⌒)☞"],
  "angry"=>[">:(", "ヽ(ｏ`皿′ｏ)ﾉ"],
