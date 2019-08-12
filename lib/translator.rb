@@ -41,7 +41,7 @@ def get_japanese_emoticon(path, emoticon)
   if lookup[:get_emoticon].keys.include?(emoticon)
     return lookup[:get_emoticon][emoticon]
   else
-    return "So sorry, no such emoticon is in our dictionary"
+    return "Sorry, that emoticon was not found"
   end
 end
 
