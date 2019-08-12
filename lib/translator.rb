@@ -37,7 +37,7 @@ end
 
 def get_japanese_emoticon(path, emoticon)
   lookup = load_library(path)
-  binding.pry
+  #binding.pry
   if lookup[:get_emoticon].keys.include?(emoticon)
     return lookup[:get_emoticon][emoticon]
   else
